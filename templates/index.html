@@ -6,8 +6,10 @@
     <div class="main_container">
         <div class="foreground">
             <h1>mc.parcerisa.xyz</h1>
-            <div class="information">status : <span class="{{ status_color }}">{{ status }}</span></div>
-            <div class="information">players : <span class="{{ players_color }}">{{ players }}</span></div>
+
+            {% for stat in server_status %}
+            <div class="information">{{ stat[0] }} : <span class="{{ stat[2] }}">{{ stat[1] }}</span></div>
+            {% endfor %}
         </div>
     </div>
 </section>
