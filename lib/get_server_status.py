@@ -22,7 +22,7 @@ def get_server_status():
     server_status = [
         ["status", online_text, online_color],
         ["players", players, players_color],
-        ["latency", latency, latency_color],
+        ["latency", f"{latency:.2f}", latency_color],
     ]
 
     return server_status
