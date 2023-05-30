@@ -13,4 +13,4 @@ def index():
     return render_template("index.html", server_status=server_status)
 
 
-app.run(host="mc.parcerisa.xyz", port=80)
+app.run(host="0.0.0.0", port=80)
