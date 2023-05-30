@@ -1,0 +1,13 @@
+<!doctype html>
+<title>Welcome to the minecraft server!</title>
+<link rel="stylesheet" href="{{ url_for('static', filename='style/index.css') }}">
+<section class="content">
+    <div class="background"></div>
+    <div class="main_container">
+        <div class="foreground">
+            <h1>mc.parcerisa.xyz</h1>
+            <div class="information">status : <span class="{{ status_color }}">{{ status }}</span></div>
+            <div class="information">players : <span class="{{ players_color }}">{{ players }}</span></div>
+        </div>
+    </div>
+</section>
