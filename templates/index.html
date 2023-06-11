@@ -3,12 +3,15 @@
 <link rel="stylesheet" href="{{ url_for('static', filename='style/index.css') }}">
 <section class="content">
     <div class="background"></div>
-    <div class="main_container">
-        <div class="foreground">
-            <h1>mc.parcerisa.xyz</h1>
-
+    <div class="foreground">
+        <h1>MC.PARCERISA.XYZ</h1>
+        <div class="information">
             {% for stat in server_status %}
-            <div class="information">{{ stat[0] }} : <span class="{{ stat[2] }}">{{ stat[1] }}</span></div>
+            <div class="card">
+                <div class="inner_card">
+                    {{ stat[0] }} : <span class="{{ stat[2] }}">{{ stat[1] }}</span>
+                </div>
+            </div>
             {% endfor %}
         </div>
     </div>

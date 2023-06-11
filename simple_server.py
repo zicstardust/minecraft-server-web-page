@@ -18,5 +18,5 @@ def index():
 #     chat = get_server_chat()
 #     return render_template("chat.html", chat=chat)
 
-
-app.run(host="0.0.0.0", port=80)
+if __name__ == "__main__":
+    app.run(host="0.0.0.0", port=80)
