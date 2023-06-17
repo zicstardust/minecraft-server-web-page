@@ -7,7 +7,7 @@ stats_list = [
         "name": "online",
         "get": lambda status: status.players.online,
         "default": 0,
-        "text": lambda x: "%d players" % x,
+        "text": lambda x: "%d players" % x if x != 1 else "1 player",
         "color": lambda x: "green" if x > 0 else "red",
         "icon": lambda x: ("group" if x > 1 else "person") if x > 0 else "person_off",
     },
