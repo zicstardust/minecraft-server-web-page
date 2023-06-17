@@ -1,0 +1,19 @@
+<!doctype html>
+
+<head>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style/base.css') }}">
+    {% block head %}{% endblock %}
+</head>
+
+<body>
+    <title>{% block title %}{% endblock %}</title>
+    <div class="background"></div>
+    <nav class="navbar">
+        <a href="{{ url_for('index') }}">Home</a>
+        <a href="{{ url_for('checkpoints') }}">Checkpoints</a>
+    </nav>
+    <div class="foreground">
+        {% block content %}{% endblock %}
+    </div>
+</body>

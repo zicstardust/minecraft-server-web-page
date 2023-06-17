@@ -1,0 +1,79 @@
+@font-face {
+    font-family: 'Archivo';
+    src: url('../fonts/Archivo_Expanded-ExtraBold.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+
+body {
+    overflow: hidden;
+    background-color: black;
+    font-family: 'Archivo', sans-serif;
+    text-transform: uppercase;
+}
+
+.background {
+    background-image: url("../img/background_image.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    position: fixed;
+    width: 100vw;
+    z-index: -1;
+    height: 100vh;
+    filter: brightness(0.4);
+    -webkit-filter: brightness(0.4);
+    transform: scale(1.2);
+}
+
+.foreground {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    overflow-y: auto;
+    overflow-x: hidden;
+    /* align-items: center; */
+    height: 100vh;
+    margin-left: 10vw;
+    margin-right: 15vw;
+    color: white;
+    font-size: 1.5rem;
+}
+
+
+.green {
+    color: rgb(17, 196, 17);
+}
+
+.red {
+    color: rgb(255, 24, 24);
+}
+
+
+/* NAV BAR */
+.navbar {
+    display: flex;
+    flex-direction: row;
+    justify-content: left;
+    align-items: center;
+    height: 5rem;
+    margin-left: 5vw;
+    margin-right: 5vw;
+    border-bottom: 1px solid white;
+}
+
+.navbar a {
+    text-decoration: none;
+    color: white;
+    font-size: 1rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.navbar a:hover {
+    color: rgb(17, 196, 17);
+}

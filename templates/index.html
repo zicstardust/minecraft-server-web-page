@@ -1,27 +1,24 @@
-<!doctype html>
+{% extends "base.html" %}
 
-<head>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-    <link rel="stylesheet" href="{{ url_for('static', filename='style/index.css') }}">
-</head>
+{% block head %}
+<link rel="stylesheet" href="{{ url_for('static', filename='style/index.css') }}">
+{% endblock %}
 
-<body>
-    <title>Welcome to the minecraft server!</title>
-    <div class="background"></div>
-    <div class="foreground">
-        <h1>MC.PARCERISA.XYZ</h1>
-        <div class="information">
-            {% for stat in server_status %}
-            <div class="card">
-                <div class="icon_holder">
-                    <i class="{{ stat['color'] }} material-icons md-60">{{ stat['icon'] }}</i>
-                </div>
-                <div class="inner_card">
-                    <div class="bit_name">{{ stat['name'] }}</div>
-                    <div class="{{ stat['color'] }} bit_info">{{ stat['text'] }}</div>
-                </div>
-            </div>
-            {% endfor %}
+{% block title %}Welcome to the minecraft server!{% endblock %}
+
+{% block content %}
+<h1>MC.PARCERISA.XYZ</h1>
+<div class="information">
+    {% for stat in server_status %}
+    <div class="card">
+        <div class="icon_holder">
+            <i class="{{ stat['color'] }} material-icons md-60">{{ stat['icon'] }}</i>
+        </div>
+        <div class="inner_card">
+            <div class="bit_name">{{ stat['name'] }}</div>
+            <div class="{{ stat['color'] }} bit_info">{{ stat['text'] }}</div>
         </div>
     </div>
-</body>
+    {% endfor %}
+</div>
+{% endblock %}

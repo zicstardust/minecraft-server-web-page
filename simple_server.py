@@ -13,6 +13,11 @@ def index():
     return render_template("index.html", server_status=server_status)
 
 
+@app.route("/checkpoints")
+def checkpoints():
+    return render_template("checkpoints.html", checkpoints=checkpoints)
+
+
 # @app.route("/chat")
 # def chat():
 #     chat = get_server_chat()
