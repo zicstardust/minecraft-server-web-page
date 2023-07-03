@@ -42,3 +42,8 @@
     align-items: center;
     background-color: #f2f2f2;
 }
+
+.card-coords p {
+    margin: 0;
+    padding: 0;
+}
