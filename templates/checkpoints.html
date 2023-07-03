@@ -11,8 +11,8 @@
     {% for cpt in checkpoints %}
     <div class="card">
         <div class="card-date">
-            <h2 class="green">({{ cpt['day'] }}</h2>
-            <p>{{ cpt['hour'] }})</p>
+            <p>{{ cpt['day'] }}</h2>
+            <p class="gray">{{ cpt['hour'] }}</p>
         </div>
         <h1 class="card-name">{{ cpt['name'] }}</h1>
         <div class="card-coords">{{ cpt['coords'] }}</div>
