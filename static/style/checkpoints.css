@@ -8,7 +8,7 @@
     /* Fill grid from left to right with 3 columns */
     display: grid;
     width: 100%;
-    grid-template-columns: 1fr 4fr 2fr;
+    grid-template-columns: 1fr 4fr 1fr;
     grid-column-gap: 10px;
     background-color: white;
     margin-top: 5px;
