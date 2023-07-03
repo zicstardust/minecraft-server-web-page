@@ -21,4 +21,4 @@ def get_world_checkpoints():
             }
         )
 
-    return checkpoints
+    return res
