@@ -50,6 +50,10 @@ body {
     color: rgb(255, 24, 24);
 }
 
+.gray {
+    color: rgb(128, 128, 128);
+}
+
 
 /* NAV BAR */
 .navbar {

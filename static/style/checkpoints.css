@@ -1,0 +1,41 @@
+.information {
+    display: flex;
+    width: 100%;
+    flex-direction: row;
+}
+
+.card {
+    /* Fill grid from left to right with 3 columns */
+    display: grid;
+    width: 100%;
+    grid-template-columns: 1fr 4fr 2fr;
+    grid-column-gap: 10px;
+    background-color: white;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    color: black;
+}
+
+.card-date {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #f2f2f2;
+}
+
+.card-date p {
+    margin: 0;
+    padding: 0;
+    font-size: 1em;
+}
+
+.card-date h2 {
+    margin: 0;
+    padding: 0;
+    font-size: 1.5em;
+}
+
+.card-name {}
+
+.card-coords {}

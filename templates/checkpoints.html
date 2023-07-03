@@ -7,10 +7,15 @@
 {% block title %}World Checkoints{% endblock %}
 
 {% block content %}
-<div>
+<div class="information">
     {% for cpt in checkpoints %}
-    <div>
-        ({{ cpt['day'] }} {{ cpt['hour'] }}) {{ cpt['name'] }} : {{ cpt['coords'] }}
+    <div class="card">
+        <div class="card-date">
+            <h2 class="green">({{ cpt['day'] }}</h2>
+            <p>{{ cpt['hour'] }})</p>
+        </div>
+        <h1 class="card-name">{{ cpt['name'] }}</h1>
+        <div class="card-coords">{{ cpt['coords'] }}</div>
     </div>
     {% endfor %}
 </div>
