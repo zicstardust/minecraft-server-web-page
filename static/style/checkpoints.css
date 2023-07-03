@@ -30,6 +30,12 @@
     font-size: 0.5em;
 }
 
-.card-name {}
+.card-name {
+    margin: 0;
+    padding: 0;
+}
 
-.card-coords {}
+.card-coords {
+    margin: 0;
+    padding: 0;
+}
