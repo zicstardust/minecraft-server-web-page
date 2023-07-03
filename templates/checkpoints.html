@@ -8,6 +8,10 @@
 
 {% block content %}
 <div>
-    {{ checkpoints }}
+    {% for cpt in checkpoints %}
+    <div>
+        ({{ cpt['day'] }} {{ cpt['hour'] }}) {{ cpt['name'] }} : {{ cpt['coords'] }}
+    </div>
+    {% endfor %}
 </div>
 {% endblock %}
