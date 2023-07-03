@@ -36,6 +36,9 @@
 }
 
 .card-coords {
-    margin: 5px;
-    padding: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #f2f2f2;
 }
