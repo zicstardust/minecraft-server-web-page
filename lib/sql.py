@@ -36,8 +36,8 @@ class Connection:
 
         cursor = self.connection.cursor()
         cursor.execute(query)
-        self.connection.commit()
         result = cursor.fetchall()
+        self.connection.commit()
         cursor.close()
         return result
 
