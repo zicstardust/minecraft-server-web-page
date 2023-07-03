@@ -1,6 +1,7 @@
 # Import flask
 from flask import Flask, render_template, request, redirect, url_for, flash, jsonify
 from lib.server_status import get_server_status
+from lib.checkpoints import get_world_checkpoints
 
 
 # Configure for port 80
@@ -15,7 +16,8 @@ def index():
 
 @app.route("/checkpoints")
 def checkpoints():
-    return render_template("checkpoints.html", checkpoints=checkpoints)
+    world_checkpoints = get_world_checkpoints()
+    return render_template("checkpoints.html", checkpoints=world_checkpoints)
 
 
 # @app.route("/chat")
