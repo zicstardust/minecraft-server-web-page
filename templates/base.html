@@ -9,12 +9,14 @@
 <body>
     <title>{% block title %}{% endblock %}</title>
     <div class="background"></div>
-    <nav class="navbar">
-        <a href="{{ url_for('index') }}">Home</a>
-        <a href="{{ url_for('checkpoints') }}">Checkpoints</a>
-        <a href="https://discord.gg/waB5NW7gbQ">Join our Discord</a>
-    </nav>
     <div class="foreground">
-        {% block content %}{% endblock %}
+        <nav class="navbar">
+            <a href="{{ url_for('index') }}">Home</a>
+            <a href="{{ url_for('checkpoints') }}">Checkpoints</a>
+            <a href="https://discord.gg/waB5NW7gbQ">Join our Discord</a>
+        </nav>
+        <div class="content">
+            {% block content %}{% endblock %}
+        </div>
     </div>
 </body>

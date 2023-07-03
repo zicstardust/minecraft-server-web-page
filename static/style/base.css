@@ -31,10 +31,19 @@ body {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: center;
-    overflow-y: auto;
+    overflow-y: hidden;
     overflow-x: hidden;
     /* align-items: center; */
+    height: 100vh;
+    margin: 0;
+}
+
+.content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    overflow-y: auto;
+    overflow-x: hidden;
     height: 100%;
     margin-left: 10vw;
     margin-right: 15vw;
