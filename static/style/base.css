@@ -76,8 +76,11 @@ body {
     height: 5rem;
     margin-left: 5vw;
     margin-right: 5vw;
-    margin-bottom: 1vw;
     border-bottom: 1px solid white;
+}
+
+.separator {
+    height: 1vw;
 }
 
 .navbar a {
