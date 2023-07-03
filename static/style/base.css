@@ -34,7 +34,7 @@ body {
     overflow-y: auto;
     overflow-x: hidden;
     /* align-items: center; */
-    height: 100vh;
+    height: 100%;
     margin-left: 10vw;
     margin-right: 15vw;
     color: white;
