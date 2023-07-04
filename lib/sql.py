@@ -31,7 +31,8 @@ class Connection:
         return connetion
 
     def __call__(self, query):
-        if not self.connected:
+        if not self.connection.is_connected():
+            self.connected = False
             self.connection = self.connect()
 
         cursor = self.connection.cursor()
