@@ -6,4 +6,4 @@ systemctl restart minecraft-web-page.service
 
 
 
-# My name is Giovanni Giorgio, but everybody calls me Giorgio.
+# My name is Giovanni Giorgio,
