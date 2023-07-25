@@ -1,3 +1,5 @@
+git pull
+
 cp minecraft-web-page.service /etc/systemd/system/
 systemctl daemon-reload
 systemctl enable minecraft-web-page.service
