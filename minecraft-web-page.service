@@ -4,9 +4,9 @@ After=multi-user.target
 
 [Service]
 Type=idle
-ExecStart=/usr/bin/python3 /usr/share/minecraft-server-web-page/simple_server.py
-StandardOutput=append:/var/log/minecraft_web_page.log
-StandardError=append:/var/log/minecraft_web_page.log
+ExecStart=/usr/bin/python3 /home/mcuser/Home-MC/web/simple_server.py
+StandardOutput=append:/home/mcuser/Home-MC/log/web.log
+StandardError=append:/home/mcuser/Home-MC/log/web.log
 Restart=always
 
 [Install]
