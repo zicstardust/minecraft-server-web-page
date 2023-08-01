@@ -18,7 +18,7 @@
 .card-list::-webkit-scrollbar-thumb {
     border-radius: 10px;
     /* Add 5px transparent border to separate scrollbar from contents */
-    border: 5px solid rgba(0, 0, 0, 1);
+    border: 5px solid rgba(0, 0, 0, .01);
     background-color: white;
 }
 
