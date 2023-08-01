@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+
+{% block head %}
+<link rel="stylesheet" href="{{ url_for('static', filename='style/backups.css') }}">
+{% endblock %}
+
+{% block title %}Backups{% endblock %}
+
+{% block content %}
+<h1>Backups</h1>
+<p>This site is under construction</p>
+<!-- 
+<div class="card-holder">
+    {% for bkp in backups %}
+    <div class="card">
+        <div class="card-date">
+            <p>{{ bkp['day'] }}</h2>
+            <p class="gray">{{ bkp['hour'] }}</p>
+        </div>
+        <div class="card-name">
+            <p>{{ bkp['name'] }}</p>
+        </div>
+    </div>
+    {% endfor %}
+</div> -->
+{% endblock %}
