@@ -14,10 +14,10 @@
     <list class="card-holder">
         {% for bkp in section['backups'] %}
         <card class="backup">
-            <name>{% bkp['name'] %}</name>
+            <name>{{ bkp['name'] }}</name>
             <date>
-                <p>{% bkp['day'] %}</p>
-                <p>{% bkp['hour'] %}</p>
+                <p>{{ bkp['day'] }}</p>
+                <p>{{ bkp['hour'] }}</p>
             </date>
         </card>
         {% endfor %}
