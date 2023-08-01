@@ -18,7 +18,7 @@
 
 .card-list::-webkit-scrollbar-thumb {
     border-radius: 10px;
-    border: 2px solid rgba(0, 0, 0, 0);
+    border: 2px solid rgba(0, 0, 0, 1);
     background-color: white;
 }
 
