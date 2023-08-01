@@ -8,11 +8,11 @@
 
 {% block content %}
 <h1>Backups</h1>
-<list class="backups-list">
+<list>
     {% for section in backups %}
     <h4>{{ section['name'] }}</h4>
     {% for bkp in section['backups'] %}
-    <card class="backup">
+    <card class="card">
         <date>
             <p>{{ bkp['day'] }}</p>
             <p>{{ bkp['hour'] }}</p>
