@@ -1,6 +1,6 @@
 .card-list {
     max-height: 100%;
-    overflow-y: auto;
+    overflow-y: overlay;
     overflow-x: hidden;
     width: 100%;
 }
