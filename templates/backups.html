@@ -11,6 +11,7 @@
 <list>
     {% for section in backups %}
     <h4>{{ section['name'] }}</h4>
+    {{section['backups']}}
     {% for bkp in section['backups'] %}
     <card class="card">
         <date>
