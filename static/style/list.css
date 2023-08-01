@@ -8,7 +8,6 @@
 
 .card-list::-webkit-scrollbar {
     margin-top: 15px;
-    padding-left: 5 px;
     width: 16px;
 }
 
@@ -18,6 +17,7 @@
 
 .card-list::-webkit-scrollbar-thumb {
     border-radius: 10px;
+    margin-left: 5px;
     background-color: white;
 }
 
