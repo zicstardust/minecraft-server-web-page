@@ -8,7 +8,7 @@
 
 {% block content %}
 <h1>Backups</h1>
-<list>
+<list class="card-list">
     {% for section in backups %}
     <h4>{{ section['name'] }}</h4>
     {% for bkp in section['backups'] %}
