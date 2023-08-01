@@ -6,10 +6,12 @@ BACKUP_PATH = os.path.abspath(os.path.join(os.path.dirname(__file__), "..", ".."
 
 def parse_name(name):
     "Name is in format %Y-%m-%d_%H-%M-%S.zip"
-    timestamp = datetime.strptime(name, "%Y-%m-%d_%H-%M-%S.zip")
-    day = timestamp.strftime("%Y-%m-%d")
-    hour = timestamp.strftime("%H:%M:%S")
-    return {"name": name, "day": day, "hour": hour}
+    date = datetime.strptime(name, "%Y-%m-%d_%H-%M-%S.zip")
+    day = date.strftime("%Y-%m-%d")
+    hour = date.strftime("%H:%M:%S")
+    timestamp = date.timestamp()
+
+    return {"name": name, "day": day, "hour": hour, "timestamp": timestamp}
 
 
 def get_backups():
@@ -20,5 +22,8 @@ def get_backups():
             for file in os.listdir(os.path.join(BACKUP_PATH, folder)):
                 if file.endswith(".zip"):
                     section["backups"].append(parse_name(file))
+
+            section["backups"].sort(key=lambda x: x["timestamp"], reverse=True)
+
             backups.append(section)
     return backups
