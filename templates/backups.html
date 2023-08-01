@@ -12,12 +12,12 @@
     {% for section in backups %}
     <h3>{{ section['name'] }}</h3>
     <list class="card-holder">
-        {% for backup in section['backups'] %}
+        {% for bkp in section['backups'] %}
         <card class="backup">
-            <name>{% backup['name'] %}</name>
+            <name>{% bkp['name'] %}</name>
             <date>
-                <p>{% backup['day'] %}</p>
-                <p>{% backup['hour'] %}</p>
+                <p>{% bkp['day'] %}</p>
+                <p>{% bkp['hour'] %}</p>
             </date>
         </card>
         {% endfor %}
