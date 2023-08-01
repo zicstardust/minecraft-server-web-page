@@ -18,19 +18,14 @@
 
 .card-list::-webkit-scrollbar-thumb {
     border-radius: 10px;
-    background-color: #000;
+    background-color: white;
 }
 
 .card-list::-webkit-scrollbar-button {
     width: 10px;
     height: 11px;
-    background: url('http://ecommerceoutsourcing.co/projects/eBay_ownthewave/img/scroll-down.png') no-repeat center center;
-    background-size: cover;
 }
 
-.card-list::-webkit-scrollbar-button:decrement {
-    background-image: url('http://ecommerceoutsourcing.co/projects/eBay_ownthewave/img/scroll.png');
-}
 
 .card {
     /* Fill grid from left to right with 3 columns */
