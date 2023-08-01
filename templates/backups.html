@@ -13,13 +13,13 @@
     <h4>{{ section['name'] }}</h4>
     {% for bkp in section['backups'] %}
     <card class="card">
-        <date>
+        <div class="card-date">
             <p>{{ bkp['day'] }}</p>
-            <p>{{ bkp['hour'] }}</p>
-        </date>
-        <name>
+            <p class="gray">{{ bkp['hour'] }}</p>
+        </div>
+        <div class="card-name">
             <p>{{ bkp['name'] }}</p>
-        </name>
+        </div>
     </card>
     {% endfor %}
     {% endfor %}
