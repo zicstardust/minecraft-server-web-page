@@ -22,11 +22,8 @@ def get_backups():
             for file in os.listdir(os.path.join(BACKUP_PATH, folder)):
                 if file.endswith(".zip"):
                     section["backups"].append(parse_name(file))
-                    section["backups"].append(parse_name(file))
-                    section["backups"].append(parse_name(file))
 
             section["backups"].sort(key=lambda x: x["timestamp"], reverse=True)
 
-            backups.append(section)
             backups.append(section)
     return backups
