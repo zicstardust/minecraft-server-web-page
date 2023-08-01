@@ -6,10 +6,9 @@
 }
 
 
-
 .card-list::-webkit-scrollbar {
     margin-top: 15px;
-    width: 11px;
+    width: 21px;
 }
 
 .card-list::-webkit-scrollbar-track {
@@ -18,7 +17,8 @@
 
 .card-list::-webkit-scrollbar-thumb {
     border-radius: 10px;
-    border: 2px solid rgba(0, 0, 0, 1);
+    /* Add 5px transparent border to separate scrollbar from contents */
+    border: 5px solid transparent;
     background-color: white;
 }
 
