@@ -1,7 +1,7 @@
 import os
 from datetime import datetime
 
-BACKUP_PATH = os.path.abspath(os.path.join(os.path.dirname(__file__)), "..", "..", "backup", "backups")
+BACKUP_PATH = os.path.abspath(os.path.join(os.path.dirname(__file__), "..", "..", "backup", "backups"))
 
 
 def parse_name(name):
