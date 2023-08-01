@@ -12,9 +12,13 @@ def parse_name(name):
 def get_backups():
     backups = []
     for file in os.listdir(BACKUP_PATH):
-        if file.endswith(".zip"):
-            timestamp = parse_name(file)
-            day = timestamp.strftime("%Y-%m-%d")
-            hour = timestamp.strftime("%H:%M:%S")
-            backups.append({"name": file, "day": day, "hour": hour})
+        if os.path.isdir(os.path.join(BACKUP_PATH, file)):
+            section = {"name": file, "backups": []}
+            for backup in os.listdir(os.path.join(BACKUP_PATH, file)):
+                if file.endswith(".zip"):
+                    timestamp = parse_name(backup)
+                    day = timestamp.strftime("%Y-%m-%d")
+                    hour = timestamp.strftime("%H:%M:%S")
+                    section["backups"].append({"name": backup, "day": day, "hour": hour})
+            backups.append(section)
     return backups

@@ -8,17 +8,20 @@
 
 {% block content %}
 <h1>Backups</h1>
-<div class="card-holder">
-    {% for bkp in backups %}
-    <div class="card">
-        <date>
-            <p>{{ bkp['day'] }}</h2>
-            <p class="gray">{{ bkp['hour'] }}</p>
-        </date>
-        <name>
-            <p>{{ bkp['name'] }}</p>
-        </name>
-    </div>
+<list class="backups-list">
+    {% for section in backups %}
+    <h3>{{ section['name'] }}</h3>
+    <list class="card-holder">
+        {% for backup in section['backups'] %}
+        <card class="backup">
+            <name>{% backup['name'] %}</name>
+            <date>
+                <p>{% backup['day'] %}</p>
+                <p>{% backup['hour'] %}</p>
+            </date>
+        </card>
+        {% endfor %}
+    </list>
     {% endfor %}
-</div>
+</list>
 {% endblock %}
