@@ -17,7 +17,8 @@
 }
 
 .card-list::-webkit-scrollbar-thumb {
-    border: 2px solid transparent;
+    border-radius: 10px;
+    border: 2px solid none;
     background-color: white;
 }
 
