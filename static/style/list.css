@@ -23,12 +23,6 @@
 .card-list::-webkit-scrollbar-thumb {
     border-radius: 10px;
     background-color: rgba(255, 255, 255, 0.4);
-    /* Drop shadow */
-    -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
-
-    /* Blur */
-    -webkit-filter: blur(10px);
-    filter: blur(10px);
 }
 
 .card-list::-webkit-scrollbar-button {
