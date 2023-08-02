@@ -17,12 +17,11 @@
         </div>
         {% endif %}
         {% endwith %}
-        <form method="POST" action="/signup">
-            <form action="/signin" method="POST">
-                <input class="input" type="text" name="username" placeholder="Minecraft Username" autofocus="">
-                <input class="input" type="password" name="password" placeholder="Password">
-                <button class="button">Log In</button>
-            </form>
+        <form action="/login" method="POST">
+            <input class="input" type="text" name="username" placeholder="Minecraft Username" autofocus="">
+            <input class="input" type="password" name="password" placeholder="Password">
+            <button class="button">Log In</button>
+        </form>
     </div>
 </div>
 {% endblock %}
