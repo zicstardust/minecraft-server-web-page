@@ -1,16 +1,16 @@
 {% extends 'base.html' %}
 
 {% block head %}
-<link rel="stylesheet" href="{{ url_for('static', filename='style/signup.css') }}">
+<link rel="stylesheet" href="{{ url_for('static', filename='style/login_signup.css') }}">
 {% endblock %}
 
 {% block title %}Signup{% endblock %}
 
 {% block content %}
-<div class="login-container">
-    <div class="login-box">
+<div class="container">
+    <div class="input-box">
         <h3 class="black">Sign Up</h3>
-        <form action="/login" method="POST">
+        <form action="/signup" method="POST">
             <input class="input" type="text" name="username" placeholder="Minecraft Username" autofocus="">
             <input class="input" type="password" name="password" placeholder="Password">
             <input class="input" type="password" name="password-confirm" placeholder="Confirm Password">
