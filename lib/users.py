@@ -1,7 +1,18 @@
 from flask import Flask, render_template, request, redirect, url_for, flash, jsonify, Markup
-from flask_login import login_user, logout_user, UserMixin
+from flask_login import login_user, logout_user, UserMixin, LoginManager
 from werkzeug.security import generate_password_hash, check_password_hash
 from .sql import db
+
+
+login_manager = LoginManager()
+
+
+def setup_login_manager(app):
+    login_manager.init_app(app)
+
+    @login_manager.user_loader
+    def load_user(user_id):
+        return User.query.get(int(user_id))
 
 
 class User(UserMixin, db.Model):
