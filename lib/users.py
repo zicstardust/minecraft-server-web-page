@@ -29,12 +29,18 @@ def handle_login(username, password):
         return redirect(url_for("index"))
 
 
-def handle_user_creation(username, password):
+def handle_signup(username, password, password_confirm):
     if not username:
         flash("Please provide a username")
         return redirect(url_for("signup"))
     elif not password:
         flash("Please provide a password")
+        return redirect(url_for("signup"))
+    elif not password_confirm:
+        flash("Please confirm your password")
+        return redirect(url_for("signup"))
+    elif password != password_confirm:
+        flash("Passwords do not match")
         return redirect(url_for("signup"))
     elif len(password) < 8:
         flash("Password must be at least 8 characters long")

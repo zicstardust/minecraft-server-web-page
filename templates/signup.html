@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+
+{% block head %}
+<link rel="stylesheet" href="{{ url_for('static', filename='style/signup.css') }}">
+{% endblock %}
+
+{% block title %}Signup{% endblock %}
+
+{% block content %}
+<div class="login-container">
+    <div class="login-box">
+        <h3 class="black">Sign Up</h3>
+        <form action="/login" method="POST">
+            <input class="input" type="text" name="username" placeholder="Minecraft Username" autofocus="">
+            <input class="input" type="password" name="password" placeholder="Password">
+            <input class="input" type="password" name="password-confirm" placeholder="Confirm Password">
+            {% with messages = get_flashed_messages() %}
+            {% if messages %}
+            <div class="red error-message">
+                {{ messages[0] }}
+            </div>
+            {% endif %}
+            {% endwith %}
+            <button class="button">Sign Up</button>
+        </form>
+    </div>
+</div>
+{% endblock %}
