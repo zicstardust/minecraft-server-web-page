@@ -1,15 +1,14 @@
 {% extends 'base.html' %}
 
 {% block head %}
-<link rel="stylesheet" href="{{ url_for('static', filename='style/login_signup.css') }}">
 {% endblock %}
 
-{% block title %}Login{% endblock %}
+{% block title %}Profile{% endblock %}
 
 {% block content %}
 {% if current_user.is_authenticated %}
 {{ current_user.username }}
 {% else %}
-<div>Not logged in. <a href="{{ url_for('login') }}" class="green">Login</a> now?</div>
+<div>Not logged in. <a href="{{ url_for('login') }}" class="green">Log in</a> now?</div>
 {% endif %}
 {% endblock %}

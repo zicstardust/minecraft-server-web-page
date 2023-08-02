@@ -24,9 +24,9 @@
                     <div class="right-button">{{ current_user.username }}</div>
                 </a>
                 {% else %}
-                <a href="{{ url_for('login') }}">Login</a>
+                <a href="{{ url_for('login') }}">Log in</a>
                 <a href="{{ url_for('signup') }}">
-                    <div class="right-button">Signup</div>
+                    <div class="right-button">Sign up</div>
                 </a>
                 {% endif %}
             </div>
