@@ -5,7 +5,6 @@ After=multi-user.target
 [Service]
 Type=idle
 ExecStart=/usr/bin/python3 /home/mcuser/Home-MC/web/simple_server.py
-User=mcuser
 StandardOutput=append:/home/mcuser/Home-MC/log/web.log
 StandardError=append:/home/mcuser/Home-MC/log/web.log
 Restart=always
