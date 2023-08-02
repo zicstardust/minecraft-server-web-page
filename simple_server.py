@@ -5,8 +5,17 @@ from lib.checkpoints import get_world_checkpoints
 from lib.backups import get_backups
 from lib.users import handle_login
 
+import os
+
+KEY_FILE = os.path.join(os.path.dirname(__file__), "..", "config", "web_secret.key")
+
+
 # Configure for port 80
 app = Flask(__name__)
+
+# Configure for secret key
+with open(KEY_FILE, "rb") as f:
+    app.secret_key = f.read()
 
 
 @app.route("/")
