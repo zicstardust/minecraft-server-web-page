@@ -4,10 +4,9 @@ from lib.server_status import get_server_status
 from lib.checkpoints import get_world_checkpoints
 from lib.backups import get_backups
 from lib.users import handle_login
+from generate_secret_key import KEY_FILE
 
 import os
-
-KEY_FILE = os.path.join(os.path.dirname(__file__), "..", "config", "web_secret.key")
 
 
 # Configure for port 80
