@@ -23,7 +23,9 @@
                 <a href="{{ url_for('logout') }}">Logout</a>
                 {% else %}
                 <a href="{{ url_for('login') }}">Login</a>
-                <a href="{{ url_for('signup') }}">Signup</a>
+                <a href="{{ url_for('signup') }}">
+                    <div class="signup-button">Signup</div>
+                </a>
                 {% endif %}
             </div>
         </nav>
