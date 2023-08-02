@@ -26,6 +26,11 @@ def backups():
     return render_template("backups.html", backups=backups)
 
 
+@app.route("/login")
+def login():
+    return render_template("login.html")
+
+
 # @app.route("/chat")
 # def chat():
 #     chat = get_server_chat()

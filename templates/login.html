@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+{% block head %}
+<link rel="stylesheet" href="{{ url_for('static', filename='style/signin.css') }}">
+{% endblock %}
+
+{% block title %}Backups{% endblock %}
+
+{% block content %}
+<h1>Log In</h1>
+<div class="login-box">
+    <form action="/signin" method="POST">
+        <input class="input" type="text" name="username" placeholder="Minecraft Username" autofocus="">
+        <input class="input" type="password" name="password" placeholder="Password">
+        <button class="button">Log In</button>
+    </form>
+</div>
+{% endblock %}
