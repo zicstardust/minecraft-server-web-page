@@ -5,12 +5,16 @@ from lib.checkpoints import get_world_checkpoints
 from lib.backups import get_backups
 from lib.users import handle_login
 from generate_secret_key import KEY_FILE
+from lib.sql import SQLALCHEMY_DATABASE_URI, SQLALCHEMY_TRACK_MODIFICATIONS, setup_db
 
 import os
 
 
 # Configure for port 80
 app = Flask(__name__)
+app.config["SQLALCHEMY_DATABASE_URI"] = SQLALCHEMY_DATABASE_URI
+app.config["SQLALCHEMY_TRACK_MODIFICATIONS"] = SQLALCHEMY_TRACK_MODIFICATIONS
+setup_db(app)
 
 # Configure for secret key
 with open(KEY_FILE, "rb") as f:

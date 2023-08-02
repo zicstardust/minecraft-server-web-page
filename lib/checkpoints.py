@@ -1,23 +1,20 @@
-from . import sql
-
-
-GET_QUERY = "SELECT id, name, coords, date_added FROM checkpoints;"
+from .sql import Checkpoint
 
 
 def get_world_checkpoints():
-    checkpoints = sql.connection.execute(GET_QUERY)
+    checkpoints = Checkpoint.query.all()
 
-    checkpoints.sort(key=lambda x: x[3], reverse=True)  # Sort by date added
+    checkpoints.sort(key=lambda x: x.date_added, reverse=True)  # Sort by date added
 
     res = []
 
     for checkpoint in checkpoints:
         res.append(
             {
-                "name": checkpoint[1],
-                "coords": checkpoint[2],
-                "day": checkpoint[3].strftime("%d/%m/%Y"),
-                "hour": checkpoint[3].strftime("%H:%M:%S"),
+                "name": checkpoint.name,
+                "coords": checkpoint.coords,
+                "day": checkpoint.date_added.strftime("%d/%m/%Y"),
+                "hour": checkpoint.date_added.strftime("%H:%M:%S"),
             }
         )
 
