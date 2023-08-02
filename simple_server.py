@@ -47,5 +47,10 @@ def login_post():
     return handle_login(username, password)
 
 
+@app.route("/signup")
+def signup():
+    return "Signup"
+
+
 if __name__ == "__main__":
     app.run(host="0.0.0.0", port=80)

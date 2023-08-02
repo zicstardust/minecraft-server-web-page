@@ -1,11 +1,11 @@
-from .sql import sql
+from . import sql
 
 
-get_query = "SELECT id, name, coords, date_added FROM checkpoints;"
+GET_QUERY = "SELECT id, name, coords, date_added FROM checkpoints;"
 
 
 def get_world_checkpoints():
-    checkpoints = sql(get_query)
+    checkpoints = sql.connection.execute(GET_QUERY)
 
     checkpoints.sort(key=lambda x: x[3], reverse=True)  # Sort by date added
 
