@@ -10,14 +10,14 @@
 <div class="login-container">
     <div class="login-box">
         <h3 class="black">Log In</h3>
+        {% with messages = get_flashed_messages() %}
+        {% if messages %}
+        <div class="error-message">
+            {{ messages[0] }}
+        </div>
+        {% endif %}
+        {% endwith %}
         <form action="/login" method="POST">
-            {% with messages = get_flashed_messages() %}
-            {% if messages %}
-            <div class="error-message">
-                {{ messages[0] }}
-            </div>
-            {% endif %}
-            {% endwith %}
             <input class="input" type="text" name="username" placeholder="Minecraft Username" autofocus="">
             <input class="input" type="password" name="password" placeholder="Password">
             <button class="button">Log In</button>
