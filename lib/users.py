@@ -45,7 +45,7 @@ def handle_signup(username, password, password_confirm):
         flash("Please provide a username")
         return redirect(url_for("signup"))
     elif User.query.filter_by(username=username).first():
-        flash("Username already exists")
+        flash(Markup("User already exists. <a href='{}'>Log in</a> instead?".format(url_for("login"))))
         return redirect(url_for("signup"))
     elif not password:
         flash("Please provide a password")
