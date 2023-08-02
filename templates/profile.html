@@ -10,6 +10,6 @@
 {% if current_user.is_authenticated %}
 {{ current_user.username }}
 {% else %}
-Not logged in. <a href="{{ url_for('login') }}">Login</a> now?
+<div>Not logged in. <a href="{{ url_for('login') }}" class="green">Login</a> now?</div>
 {% endif %}
 {% endblock %}
