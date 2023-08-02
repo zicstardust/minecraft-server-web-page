@@ -1,8 +1,14 @@
+.login-container {
+    display: grid;
+    place-items: center;
+}
+
 .login-box {
     background-color: white;
     max-width: 500px;
     padding: 20px;
     display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     grid-gap: 10px;
 }
 
@@ -16,7 +22,7 @@
 .button {
     background-color: rgb(17, 196, 17);
     padding: 12px 20px;
-    border: none;
+    border: 1px solid rgb(17, 196, 17);
     color: white;
     width: 100%;
     cursor: pointer;
@@ -26,5 +32,4 @@
 .button:hover {
     background-color: white;
     color: rgb(17, 196, 17);
-    border: 1px solid rgb(17, 196, 17);
 }
