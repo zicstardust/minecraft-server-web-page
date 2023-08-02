@@ -19,12 +19,14 @@
             </div>
             <div class="navbar-right">
                 {% if current_user.is_authenticated %}
-                <a href="{{ url_for('profile') }}">{{ current_user.username }}</a>
                 <a href="{{ url_for('logout') }}">Logout</a>
+                <a href="{{ url_for('profile') }}">
+                    <div class="right-button">{{ current_user.username }}</div>
+                </a>
                 {% else %}
                 <a href="{{ url_for('login') }}">Login</a>
                 <a href="{{ url_for('signup') }}">
-                    <div class="signup-button">Signup</div>
+                    <div class="right-button">Signup</div>
                 </a>
                 {% endif %}
             </div>

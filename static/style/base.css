@@ -122,7 +122,7 @@ body {
     color: rgb(17, 196, 17);
 }
 
-.signup-button {
+.right-button {
     background-color: rgb(17, 196, 17);
     padding: 0.5rem 1rem;
     border: 1px solid rgb(17, 196, 17);
@@ -130,7 +130,7 @@ body {
     cursor: pointer;
 }
 
-.signup-button:hover {
+.right-button:hover {
     background-color: white;
     color: rgb(17, 196, 17);
 }
