@@ -73,7 +73,7 @@ def logout():
 
 @app.route("/profile")
 def profile():
-    return "Profile"
+    return render_template("profile.html")
 
 
 if __name__ == "__main__":
