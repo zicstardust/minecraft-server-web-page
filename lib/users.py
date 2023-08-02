@@ -44,6 +44,9 @@ def handle_signup(username, password, password_confirm):
     if not username:
         flash("Please provide a username")
         return redirect(url_for("signup"))
+    elif User.query.filter_by(username=username).first():
+        flash("Username already exists")
+        return redirect(url_for("signup"))
     elif not password:
         flash("Please provide a password")
         return redirect(url_for("signup"))
@@ -55,9 +58,6 @@ def handle_signup(username, password, password_confirm):
         return redirect(url_for("signup"))
     elif len(password) < 8:
         flash("Password must be at least 8 characters long")
-        return redirect(url_for("signup"))
-    elif User.query.filter_by(username=username).first():
-        flash("Username already exists")
         return redirect(url_for("signup"))
     else:
         user = User(username=username, password=generate_password_hash(password))
