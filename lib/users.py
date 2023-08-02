@@ -1,28 +1,31 @@
 from flask import Flask, render_template, request, redirect, url_for, flash, jsonify
+from flask_login import login_user, logout_user, UserMixin
 from werkzeug.security import generate_password_hash, check_password_hash
-from . import sql
+from .sql import db
 
 
-CREATE_USER_QUERY = "INSERT INTO users (username, password) VALUES ('{username}', '{password}');"
-GET_USER_QUERY = "SELECT * FROM users WHERE username='{username}';"
+class User(UserMixin, db.Model):
+    "id, username, password"
+    id = db.Column(db.Integer, primary_key=True)
+    username = db.Column(db.String(255), nullable=False)
+    password = db.Column(db.String(255), nullable=False)
 
-get_user = lambda username: sql.connection.execute(GET_USER_QUERY.format(username=username))
-create_user = lambda username, password: sql.connection.execute(
-    CREATE_USER_QUERY.format(username=username, password=password)
-)
+    def __repr__(self):
+        return f"<User {self.username}>"
 
 
 def handle_login(username, password):
-    user = get_user(username)
+    user = User.query.filter_by(username=username).first()
 
     if not user:
         flash("User does not exist")
         return redirect(url_for("login"))
-    elif not check_password_hash(user[2], password):
+    elif not check_password_hash(user.password, password):
         flash("Incorrect password")
         return redirect(url_for("login"))
     else:
         # Log the user in
+        login_user(user)
         return redirect(url_for("index"))
 
 
@@ -36,11 +39,15 @@ def handle_user_creation(username, password):
     elif len(password) < 8:
         flash("Password must be at least 8 characters long")
         return redirect(url_for("signup"))
-    elif get_user(username):
+    elif User.query.filter_by(username=username).first():
         flash("Username already exists")
         return redirect(url_for("signup"))
     else:
-        create_user(username, generate_password_hash(password))
+        user = User(username=username, password=generate_password_hash(password))
+
+        db.session.add(user)
+        db.session.commit()
 
         # Log the user in
-        return handle_login(username, password)
+        login_user(user)
+        return redirect(url_for("index"))
