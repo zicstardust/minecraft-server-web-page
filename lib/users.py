@@ -18,7 +18,7 @@ def handle_login(username, password):
     user = User.query.filter_by(username=username).first()
 
     if not user:
-        flash("User does not exist")
+        flash("User does not exist. <a href='{}'>Sign up</a> instead?".format(url_for("signup")))
         return redirect(url_for("login"))
     elif not check_password_hash(user.password, password):
         flash("Incorrect password")
