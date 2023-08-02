@@ -8,7 +8,7 @@ db = SQLAlchemy()
 
 def setup_db(app):
     db.init_app(app)
-    db.create_all(app=app)
+    db.create_all()
 
 
 # MODELS:
