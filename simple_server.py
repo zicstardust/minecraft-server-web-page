@@ -3,7 +3,7 @@ from flask import Flask, render_template, request, redirect, url_for, flash, jso
 from lib.server_status import get_server_status
 from lib.checkpoints import get_world_checkpoints
 from lib.backups import get_backups
-from lib.users import handle_login, handle_signup, setup_login_manager
+from lib.users import handle_login, handle_signup, setup_login_manager, handle_logout
 from generate_secret_key import KEY_FILE
 from lib.sql import SQLALCHEMY_DATABASE_URI, SQLALCHEMY_TRACK_MODIFICATIONS, setup_db
 
@@ -63,6 +63,17 @@ def signup_post():
     password = request.form.get("password")
     password_confirm = request.form.get("password-confirm")
     return handle_signup(username, password, password_confirm)
+
+
+@app.route("/logout")
+def logout():
+    handle_logout()
+    return redirect(url_for("index"))
+
+
+@app.route("/profile")
+def profile():
+    return "Profile"
 
 
 if __name__ == "__main__":

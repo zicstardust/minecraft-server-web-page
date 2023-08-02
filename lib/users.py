@@ -68,3 +68,7 @@ def handle_signup(username, password, password_confirm):
         # Log the user in
         login_user(user)
         return redirect(url_for("index"))
+
+
+def handle_logout():
+    logout_user()

@@ -11,10 +11,20 @@
     <div class="background"></div>
     <div class="foreground">
         <nav class="navbar">
-            <a href="{{ url_for('index') }}">Home</a>
-            <a href="{{ url_for('checkpoints') }}">Checkpoints</a>
-            <a href="{{ url_for('backups') }}">Backups</a>
-            <a href="https://discord.gg/waB5NW7gbQ">Join our Discord</a>
+            <div class="navbar-left">
+                <a href="{{ url_for('index') }}">Home</a>
+                <a href="{{ url_for('checkpoints') }}">Checkpoints</a>
+                <a href="{{ url_for('backups') }}">Backups</a>
+                <a href="https://discord.gg/waB5NW7gbQ">Join our Discord</a>
+            </div>
+            <div class="navbar-right">
+                {% if current_user.is_authenticated %}
+                <a href="{{ url_for('profile') }}">Profile</a>
+                <a href="{{ url_for('logout') }}">Logout</a>
+                {% else %}
+                <a href="{{ url_for('login') }}">Login</a>
+                <a href="{{ url_for('signup') }}">Signup</a>
+                {% endif %}
         </nav>
         <div class="separator"></div>
         <div class="content">

@@ -74,16 +74,33 @@ body {
 }
 
 
-/* NAV BAR */
 .navbar {
     display: flex;
     flex-direction: row;
-    justify-content: left;
+    justify-content: space-between;
     align-items: center;
     height: 5rem;
     margin-left: 5vw;
     margin-right: 5vw;
     border-bottom: 1px solid white;
+}
+
+/* NAV BAR */
+.navbar-left {
+    display: flex;
+    flex-direction: row;
+    justify-content: left;
+    align-items: center;
+    height: 100%;
+}
+
+/* USER BAR */
+.navbar-right {
+    display: flex;
+    flex-direction: row;
+    justify-content: right;
+    align-items: center;
+    height: 100%;
 }
 
 .separator {
