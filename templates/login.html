@@ -15,7 +15,7 @@
             <input class="input" type="password" name="password" placeholder="Password">
             {% with messages = get_flashed_messages() %}
             {% if messages %}
-            <div class="red">
+            <div class="red error-message">
                 {{ messages[0] }}
             </div>
             {% endif %}
