@@ -16,7 +16,7 @@
             <input class="input" type="password" name="password-confirm" placeholder="Confirm Password">
             {% with messages = get_flashed_messages() %}
             {% if messages %}
-            <div class="red error-message">
+            <div class="error-message">
                 {{ messages[0] }}
             </div>
             {% endif %}
