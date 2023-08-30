@@ -4,7 +4,7 @@ from lib.server_status import get_server_status
 from lib.checkpoints import get_world_checkpoints
 from lib.backups import get_backups
 from lib.users import handle_login, handle_signup, setup_login_manager, handle_logout
-from secrets.generate_secret_key import KEY_FILE
+from secrets.secret_key import KEY_FILE
 from lib.sql import SQLALCHEMY_DATABASE_URI, SQLALCHEMY_TRACK_MODIFICATIONS, setup_db
 
 import os
