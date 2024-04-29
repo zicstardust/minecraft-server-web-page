@@ -10,7 +10,9 @@
 
 {% block content %}
 <h1>Player Playtime</h1>
-<canvas id="playtimeChart" style="width:100%;max-width:700px;z-index:100;"></canvas>
+<div style="background: white;">
+    <canvas id=" playtimeChart" style="width:100%;max-width:700px;"></canvas>
+</div>
 <script>
     fetch("{{ url_for('api_playtime') }}")
         .then(response => response.json())
