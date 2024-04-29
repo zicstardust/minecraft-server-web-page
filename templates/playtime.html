@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+
+{% block head %}
+<link rel="stylesheet" href="{{ url_for('static', filename='style/list.css') }}">
+<link rel="stylesheet" href="{{ url_for('static', filename='style/backups.css') }}">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
+{% endblock %}
+
+{% block title %}Playtime{% endblock %}
+
+{% block content %}
+<canvas id="playtimeChart" style="width:100%;max-width:700px"></canvas>
+<script>
+    var xValues = {% players %};
+    var yValues = {% playtime %};
+
+    new Chart("playtimeChart", {
+        type: "bar",
+        data: {
+            labels: xValues,
+            datasets: [{
+                data: yValues
+            }]
+        },
+        options: {
+            legend: { display: false },
+            title: {
+                display: true,
+                text: "Player Playtime (hours)"
+            }
+        }
+    });
+</script>
+{% endblock %}

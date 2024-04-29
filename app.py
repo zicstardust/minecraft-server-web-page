@@ -1,14 +1,15 @@
 # Import flask
-from flask import Flask, render_template, request, redirect, url_for, flash, jsonify
-from lib.server_status import get_server_status
-from lib.checkpoints import get_world_checkpoints
-from lib.backups import get_backups
-from lib.users import handle_login, handle_signup, setup_login_manager, handle_logout
-from secrets.secret_key import KEY_FILE
-from lib.sql import SQLALCHEMY_DATABASE_URI, SQLALCHEMY_TRACK_MODIFICATIONS, setup_db
-
 import os
+from secrets.secret_key import KEY_FILE
 
+from flask import Flask, flash, jsonify, redirect, render_template, request, url_for
+from lib.backups import get_backups
+from lib.checkpoints import get_world_checkpoints
+from lib.server_status import get_server_status
+from lib.sql import SQLALCHEMY_DATABASE_URI, SQLALCHEMY_TRACK_MODIFICATIONS, setup_db
+from lib.users import handle_login, handle_logout, handle_signup, setup_login_manager
+
+from web.lib.playtime import get_player_playtime_hours
 
 # Configure for port 80
 app = Flask(__name__)
@@ -38,6 +39,12 @@ def checkpoints():
 def backups():
     backups = get_backups()
     return render_template("backups.html", backups=backups)
+
+
+@app.route("/playtime")
+def playtime():
+    players, playtime = get_player_playtime_hours()
+    return render_template("playtime.html", playtime=playtime, players=players)
 
 
 @app.route("/login")
