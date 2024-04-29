@@ -9,10 +9,8 @@
 {% block title %}Playtime{% endblock %}
 
 {% block content %}
-<h1>Player Playtime</h1>
-<div style="background: black;position: relative; width: fit-content;">
-    <canvas id="playtimeChart" style="width:100%;max-width:700px;"></canvas>
-</div>
+<h1>Player Playtime</h1>>
+<canvas id="playtimeChart" style="width:100%;max-width:700px;background-color: white;"></canvas>
 <script>
     fetch("{{ url_for('api_playtime') }}")
         .then(response => response.json())
@@ -23,7 +21,7 @@
                     labels: players,
                     datasets: [{
                         data: playtime,
-                        backgroundColor: players.map(() => "green"),
+                        // backgroundColor: players.map(() => "green"),
                     }]
                 },
                 options: {
