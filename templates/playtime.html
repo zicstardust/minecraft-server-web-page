@@ -10,7 +10,7 @@
 
 {% block content %}
 <h1>Player Playtime</h1>
-<canvas id="playtimeChart" style="width:100%;max-width:700px;background-color: white;"></canvas>
+<canvas id="playtimeChart" style="width:100%;max-width:900px;background-color: white;"></canvas>
 <script>
     const colors = [
         'rgba(255, 99, 132, 0.2)',
@@ -40,8 +40,8 @@
                     labels: players,
                     datasets: [{
                         data: playtime,
-                        backgroundColor: colors,
-                        borderColor: borders,
+                        backgroundColor: players.map((_, i) => colors[i % colors.length]),
+                        borderColor: players.map((_, i) => borders[i % borders.length]),
                         borderWidth: 1,
                     }]
                 },
