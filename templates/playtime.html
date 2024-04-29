@@ -23,13 +23,13 @@
                     labels: players,
                     datasets: [{
                         data: playtime,
-                        backgroundColor: "green",
+                        backgroundColor: players.map(() => "green"),
                     }]
                 },
                 options: {
                     legend: { display: false },
                     title: {
-                        display: false,
+                        display: true,
                         text: "Player Playtime (hours)"
                     },
                     scales: {
