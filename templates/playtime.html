@@ -52,9 +52,12 @@
                         text: "Player Playtime (hours)"
                     },
                     scales: {
-                        yAxes: {
-                            startAtZero: true,
-                        },
+                        // Make y start at zero
+                        yAxes: [{
+                            ticks: {
+                                beginAtZero: true
+                            }
+                        }],
                     }
                 }
             },
