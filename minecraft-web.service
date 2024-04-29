@@ -11,6 +11,8 @@ StandardOutput=append:/home/mcuser/Home-MC/log/web.log
 StandardError=append:/home/mcuser/Home-MC/log/web.log
 WorkingDirectory=/home/mcuser/Home-MC/web
 Restart=always
+ExecStartPre=git checkout main
+ExecStartPre=git pull
 
 [Install]
 WantedBy=multi-user.target
