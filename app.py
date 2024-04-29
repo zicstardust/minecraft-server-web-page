@@ -42,8 +42,13 @@ def backups():
 
 @app.route("/playtime")
 def playtime():
+    return render_template("playtime.html")
+
+
+@app.route("/api/playtime")
+def api_playtime():
     players, playtime = get_player_playtime_hours()
-    return render_template("playtime.html", playtime=playtime, players=players)
+    return {"players": players, "playtime": playtime}
 
 
 @app.route("/login")

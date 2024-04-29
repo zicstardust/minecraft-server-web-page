@@ -9,26 +9,28 @@
 {% block title %}Playtime{% endblock %}
 
 {% block content %}
+<h1>Player Playtime</h1>
 <canvas id="playtimeChart" style="width:100%;max-width:700px"></canvas>
 <script>
-    var xValues = {{ players }};
-    var yValues = {{ playtime }};
-
-    new Chart("playtimeChart", {
-        type: "bar",
-        data: {
-            labels: xValues,
-            datasets: [{
-                data: yValues
-            }]
-        },
-        options: {
-            legend: { display: false },
-            title: {
-                display: true,
-                text: "Player Playtime (hours)"
-            }
+    fetch("{{ url_for('api_playtime') }}")
+        .then(response => response.json())
+        .then(({ players, playtime }) => {
+            new Chart("playtimeChart", {
+                type: "bar",
+                data: {
+                    labels: players,
+                    datasets: [{ data: playtime }]
+                },
+                options: {
+                    legend: { display: false },
+                    title: {
+                        display: false,
+                        text: "Player Playtime (hours)"
+                    }
+                }
+            });
         }
-    });
+        );
+
 </script>
 {% endblock %}
