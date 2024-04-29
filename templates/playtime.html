@@ -3,7 +3,7 @@
 {% block head %}
 <link rel="stylesheet" href="{{ url_for('static', filename='style/list.css') }}">
 <link rel="stylesheet" href="{{ url_for('static', filename='style/backups.css') }}">
-<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.2/Chart.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
 {% endblock %}
 
 {% block title %}Playtime{% endblock %}
@@ -28,11 +28,9 @@
                         text: "Player Playtime (hours)"
                     },
                     scales: {
-                        y: {
-                            beginAtZero: true,
-                            title: {
-                                display: true,
-                                text: "Hours"
+                        yAxes: {
+                            ticks: {
+                                min: 0,
                             }
                         },
                     }
