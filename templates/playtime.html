@@ -9,9 +9,28 @@
 {% block title %}Playtime{% endblock %}
 
 {% block content %}
-<h1>Player Playtime</h1>>
+<h1>Player Playtime</h1>
 <canvas id="playtimeChart" style="width:100%;max-width:700px;background-color: white;"></canvas>
 <script>
+    const colors = [
+        'rgba(255, 99, 132, 0.2)',
+        'rgba(255, 159, 64, 0.2)',
+        'rgba(255, 205, 86, 0.2)',
+        'rgba(75, 192, 192, 0.2)',
+        'rgba(54, 162, 235, 0.2)',
+        'rgba(153, 102, 255, 0.2)',
+        'rgba(201, 203, 207, 0.2)'
+    ]
+    const borders = [
+        'rgb(255, 99, 132)',
+        'rgb(255, 159, 64)',
+        'rgb(255, 205, 86)',
+        'rgb(75, 192, 192)',
+        'rgb(54, 162, 235)',
+        'rgb(153, 102, 255)',
+        'rgb(201, 203, 207)'
+    ]
+
     fetch("{{ url_for('api_playtime') }}")
         .then(response => response.json())
         .then(({ players, playtime }) => {
@@ -21,13 +40,15 @@
                     labels: players,
                     datasets: [{
                         data: playtime,
-                        // backgroundColor: players.map(() => "green"),
+                        backgroundColor: colors,
+                        borderColor: borders,
+                        borderWidth: 1,
                     }]
                 },
                 options: {
                     legend: { display: false },
                     title: {
-                        display: true,
+                        display: false,
                         text: "Player Playtime (hours)"
                     },
                     scales: {
