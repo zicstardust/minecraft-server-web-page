@@ -55,14 +55,19 @@
                         // Make y start at zero
                         yAxes: [{
                             ticks: {
-                                beginAtZero: true
+                                beginAtZero: true,
+                                color: "white"
                             },
-                            // Make axes white
                             gridLines: {
-                                color: "rgba(255, 255, 255, 0.1)"
+                                display: true,
+                                color: "white"
                             }
-
                         }],
+                        xAxes: [{
+                            gridLines: {
+                                display: false
+                            }
+                        }]
                     }
                 }
             },
