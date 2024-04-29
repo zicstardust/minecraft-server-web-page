@@ -11,8 +11,8 @@
 {% block content %}
 <canvas id="playtimeChart" style="width:100%;max-width:700px"></canvas>
 <script>
-    var xValues = {% players %};
-    var yValues = {% playtime %};
+    var xValues = {{ players }};
+    var yValues = {{ playtime }};
 
     new Chart("playtimeChart", {
         type: "bar",
