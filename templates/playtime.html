@@ -21,7 +21,10 @@
                 type: "bar",
                 data: {
                     labels: players,
-                    datasets: [{ data: playtime }]
+                    datasets: [{
+                        data: playtime,
+                        backgroundColor: "green",
+                    }]
                 },
                 options: {
                     legend: { display: false },
