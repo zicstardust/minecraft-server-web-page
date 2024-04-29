@@ -1,3 +1,4 @@
 flask
 mcstatus
 flask-login
+gunicorn

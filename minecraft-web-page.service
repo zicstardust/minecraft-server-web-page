@@ -3,10 +3,13 @@ Description=Minecraft Server Status Web Page
 After=multi-user.target
 
 [Service]
-Type=idle
-ExecStart=/usr/bin/python3 /home/mcuser/Home-MC/web/app.py
+User=mcuser
+Group=mcuser
+# Run app.py with gunicorn
+ExecStart=/home/mcuser/Home-MC/web/.venv/bin/gunicorn --workers 3 --bind 
 StandardOutput=append:/home/mcuser/Home-MC/log/web.log
 StandardError=append:/home/mcuser/Home-MC/log/web.log
+WorkingDirectory=/home/mcuser/Home-MC/web
 Restart=always
 
 [Install]
