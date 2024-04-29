@@ -6,7 +6,7 @@ After=multi-user.target
 User=mcuser
 Group=mcuser
 # Run app.py with gunicorn
-ExecStart=/home/mcuser/Home-MC/web/.venv/bin/gunicorn --workers 3 --bind localhost:8000 app:app
+ExecStart=/home/mcuser/Home-MC/web/.venv/bin/gunicorn --workers 3 --bind localhost:8765 app:app
 StandardOutput=append:/home/mcuser/Home-MC/log/web.log
 StandardError=append:/home/mcuser/Home-MC/log/web.log
 WorkingDirectory=/home/mcuser/Home-MC/web
