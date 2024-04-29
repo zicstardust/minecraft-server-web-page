@@ -26,6 +26,6 @@ def get_player_playtime_hours():
             players.append(uuid2name[player_uuid])
             with open(player_file, "r") as f:
                 data = json.load(f)
-                playtime.append(data["stats"]["minecraft:custom"]["minecraft:play_time"] / 7200)
+                playtime.append(data["stats"]["minecraft:custom"]["minecraft:play_time"] / 72000)
 
     return players, playtime
