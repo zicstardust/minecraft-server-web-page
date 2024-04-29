@@ -3,3 +3,4 @@ mcstatus
 flask-login
 flask_sqlalchemy
 gunicorn
+mysql-connector-python
