@@ -1,58 +1,38 @@
 .card-list {
+    display: flex;
     max-height: 100%;
     overflow-y: auto;
     overflow-x: hidden;
     width: 100%;
+    gap: 0.2rem;
 }
 
 .card {
     /* Fill grid from left to right with 3 columns */
-    display: grid;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
     width: 100%;
-    grid-template-columns: 1fr 5fr;
-    grid-column-gap: 10px;
+    gap: 2rem;
     background-color: white;
-    margin-top: 5px;
-    margin-bottom: 5px;
-    color: black;
-    height: 2.5em;
 }
 
 .card * {
     color: black
 }
 
-.card-date {
+.card-info {
     display: flex;
-    flex-direction: column;
-    justify-content: center;
+    flex-direction: row;
     align-items: center;
-    background-color: #f2f2f2;
-}
-
-.card-date p {
-    margin: 0;
-    padding: 0;
-    font-size: 0.5em;
-}
-
-
-.card-name {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-}
-
-.card-name p {
-    margin: 0;
-    padding: 0;
+    gap: 2rem;
 }
 
 .card-actions {
     display: flex;
-    flex-direction: column;
-    justify-content: center;
+    flex-direction: row;
     align-items: center;
+    gap: 1rem;
     background-color: #f2f2f2;
 }
