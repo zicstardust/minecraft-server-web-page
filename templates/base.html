@@ -4,10 +4,10 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     <link rel="stylesheet" href="{{ url_for('static', filename='style/base.css') }}">
     {% block head %}{% endblock %}
+    <title>{% block title %}{% endblock %}</title>
 </head>
 
 <body>
-    <title>{% block title %}{% endblock %}</title>
     <div class="background"></div>
     <div class="foreground">
         <nav class="navbar">
