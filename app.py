@@ -28,12 +28,6 @@ def index():
     return render_template("index.html", server_status=server_status)
 
 
-@app.route("/checkpoints")
-def checkpoints():
-    world_checkpoints = get_world_checkpoints()
-    return render_template("checkpoints.html", checkpoints=world_checkpoints)
-
-
 @app.route("/backups")
 def backups():
     backups = get_backups()
