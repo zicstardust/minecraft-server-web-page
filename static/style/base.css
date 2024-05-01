@@ -31,6 +31,11 @@ button:hover {
     color: rgb(17, 196, 17);
 }
 
+a {
+    text-decoration: none;
+    color: white;
+}
+
 .background {
     background-image: url("../img/background_image.png");
     background-repeat: no-repeat;
