@@ -4,7 +4,6 @@ from secrets.secret_key import KEY_FILE
 
 from flask import Flask, flash, jsonify, redirect, render_template, request, url_for
 from lib.backups import get_backups
-from lib.checkpoints import get_world_checkpoints
 from lib.playtime import get_player_playtime_hours
 from lib.server_status import get_server_status
 from lib.sql import SQLALCHEMY_DATABASE_URI, SQLALCHEMY_TRACK_MODIFICATIONS, setup_db
