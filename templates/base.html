@@ -18,17 +18,7 @@
                 <a href="https://discord.gg/waB5NW7gbQ">Join our Discord</a>
             </div>
             <div class="navbar-right">
-                {% if current_user.is_authenticated %}
-                <a href="{{ url_for('logout') }}">Log out</a>
-                <a href="{{ url_for('profile') }}">
-                    <div class="right-button">{{ current_user.username }}</div>
-                </a>
-                {% else %}
-                <a href="{{ url_for('login') }}">Log in</a>
-                <a href="{{ url_for('signup') }}">
-                    <div class="right-button">Sign up</div>
-                </a>
-                {% endif %}
+                <p>mc.parcerisa.xyz</p>
             </div>
         </nav>
         <div class="separator"></div>
