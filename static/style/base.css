@@ -17,6 +17,19 @@ body {
     text-transform: uppercase;
 }
 
+button {
+    background-color: rgb(17, 196, 17);
+    padding: 0.5rem 1rem;
+    border: 1px solid rgb(17, 196, 17);
+    color: white;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: white;
+    color: rgb(17, 196, 17);
+}
+
 .background {
     background-image: url("../img/background_image.png");
     background-repeat: no-repeat;
@@ -125,18 +138,5 @@ body {
 }
 
 .navbar a:hover {
-    color: rgb(17, 196, 17);
-}
-
-.right-button {
-    background-color: rgb(17, 196, 17);
-    padding: 0.5rem 1rem;
-    border: 1px solid rgb(17, 196, 17);
-    color: white;
-    cursor: pointer;
-}
-
-.right-button:hover {
-    background-color: white;
     color: rgb(17, 196, 17);
 }
