@@ -1,10 +1,12 @@
 .card-list {
+    display: flex;
+    flex-direction: column;
     max-height: 100%;
-    overflow-y: overlay;
+    overflow-y: auto;
     overflow-x: hidden;
     width: 100%;
+    gap: 0.1rem;
 }
-
 
 .card-list::-webkit-scrollbar {
     margin-top: 15px;
@@ -31,16 +33,37 @@
 
 
 .card {
-    /* Fill grid from left to right with 3 columns */
-    display: grid;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 0.2rem 1rem;
+    align-items: center;
     width: 100%;
-    grid-template-columns: 1fr 5fr;
-    grid-column-gap: 10px;
+    gap: 2rem;
     background-color: white;
-    margin-top: 5px;
-    margin-bottom: 5px;
-    color: black;
-    height: 2.5em;
+}
+
+.card * {
+    color: black
+}
+
+.card p {
+    margin: 0;
+    font-size: small;
+}
+
+.card-info {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 2rem;
+}
+
+.card-actions {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 1rem;
 }
 
 .card-date {
