@@ -104,8 +104,14 @@ body {
     height: 100%;
 }
 
-.separator {
+.h-separator {
     height: 1vw;
+}
+
+.v-separator {
+    height: 100%;
+    width: 1px;
+    background-color: white;
 }
 
 .navbar a {
