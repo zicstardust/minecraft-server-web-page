@@ -1,5 +1,5 @@
-from flask import Flask, render_template
-from lib.backups import get_backups
+from flask import Flask, render_template, send_from_directory
+from lib.backups import get_backup_folder_file, get_backups
 from lib.playtime import get_player_playtime_hours
 from lib.server_status import get_server_status
 
@@ -28,6 +28,15 @@ def playtime():
 def api_playtime():
     players, playtime = get_player_playtime_hours()
     return {"players": players, "playtime": playtime}
+
+
+@app.route("/api/backups/<folder>/<name>/download")
+def download_backup(folder, name):
+    res = get_backup_folder_file(folder, name)
+    if res is None:
+        return "File not found", 404
+    folder, file = res
+    return send_from_directory(folder, file, as_attachment=True)
 
 
 if __name__ == "__main__":

@@ -27,3 +27,10 @@ def get_backups():
 
             backups.append(section)
     return backups
+
+
+def get_backup_folder_file(folder: str, name: str) -> tuple[str, str] | None:
+    path = os.path.abspath(os.path.join(BACKUP_PATH, folder, name))
+    if not os.path.exists(path):
+        return None
+    return os.path.dirname(path), os.path.basename(path)
