@@ -3,8 +3,8 @@
 <head>
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     <link rel="stylesheet" href="{{ url_for('static', filename='style/base.css') }}">
+    <title>mc.parcerisa.xyz | {% block title %}{% endblock %}</title>
     {% block head %}{% endblock %}
-    <title>{% block title %}{% endblock %}</title>
 </head>
 
 <body>
