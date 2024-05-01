@@ -18,6 +18,10 @@
     height: 2.5em;
 }
 
+.card * {
+    color: black
+}
+
 .card-date {
     display: flex;
     flex-direction: column;
