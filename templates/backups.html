@@ -18,8 +18,12 @@
             <p class="gray">{{ bkp['hour'] }}</p>
         </div>
         <div class="card-actions">
-            <a href="{{ url_for('download_backup', folder=section['name'], name=bkp['name']) }}"
-                class="material-icons">download</a>
+            {% if bkp['type'] == 'full' %}
+            <a href="{{ url_for('download_backup', path=section['rel_path']) }}" class="material-icons">download</a>
+            {% endif %}
+            {% if bkp['type'] == 'partial' %}
+            <p class="material-icons darkgreen">difference</p>
+            {% endif %}
         </div>
     </card>
     {% endfor %}

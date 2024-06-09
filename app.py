@@ -1,4 +1,6 @@
 import os
+import pathlib
+
 from dotenv import load_dotenv
 
 load_dotenv(os.path.join(os.path.dirname(__file__), "minecraft-web.env"))
@@ -35,9 +37,9 @@ def api_playtime():
     return {"players": players, "playtime": playtime}
 
 
-@app.route("/api/backups/<folder>/<name>/download")
-def download_backup(folder, name):
-    res = get_backup_folder_file(folder, name)
+@app.route("/api/backups/download/<path:path>")
+def download_backup(path: str):
+    res = get_backup_folder_file(path)
     if res is None:
         return "File not found", 404
     folder, file = res
