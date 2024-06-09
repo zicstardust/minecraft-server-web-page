@@ -19,7 +19,7 @@
         </div>
         <div class="card-actions">
             {% if bkp['type'] == 'full' %}
-            <a href="{{ url_for('download_backup', path=section['rel_path']) }}" class="material-icons">download</a>
+            <a href="{{ url_for('download_backup', path=bkp['rel_path']) }}" class="material-icons">download</a>
             {% endif %}
         </div>
     </card>
