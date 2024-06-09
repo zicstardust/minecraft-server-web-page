@@ -21,9 +21,6 @@
             {% if bkp['type'] == 'full' %}
             <a href="{{ url_for('download_backup', path=section['rel_path']) }}" class="material-icons">download</a>
             {% endif %}
-            {% if bkp['type'] == 'partial' %}
-            <p class="material-icons darkgreen">difference</p>
-            {% endif %}
         </div>
     </card>
     {% endfor %}
