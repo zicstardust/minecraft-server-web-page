@@ -1,3 +1,8 @@
+import os
+from dotenv import load_dotenv
+
+load_dotenv(os.path.join(os.path.dirname(__file__), "minecraft-web.env"))
+
 from flask import Flask, render_template, send_from_directory
 from lib.backups import get_backup_folder_file, get_backups
 from lib.playtime import get_player_playtime_hours

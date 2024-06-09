@@ -3,3 +3,5 @@
 
 .venv/
 secrets/*
+*.service
+*.socket

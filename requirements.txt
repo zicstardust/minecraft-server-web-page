@@ -5,3 +5,4 @@ flask_sqlalchemy
 gunicorn
 mysql-connector-python
 mojang
+python-dotenv

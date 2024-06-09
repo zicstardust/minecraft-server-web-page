@@ -1,8 +1,7 @@
 import os
 from datetime import datetime
 
-BACKUP_PATH = os.path.abspath(os.path.join(os.path.dirname(__file__), "..", "..", "backup", "backups"))
-
+BACKUP_PATH = os.environ["BACKUPS_PATH"]
 
 def parse_name(name):
     "Name is in format %Y-%m-%d_%H-%M-%S.zip"
