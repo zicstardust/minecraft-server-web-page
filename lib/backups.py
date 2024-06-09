@@ -4,9 +4,9 @@ from datetime import datetime
 
 
 def parseFullBackup(rel_path: pathlib.Path):
-    "Name is in format %Y-%m-%d_%H-%M-%S.zip"
+    "Name is in format %Y-%m-%d_%H-%M-%S"
     name = rel_path.stem
-    date = datetime.strptime(name, "%Y-%m-%d_%H-%M-%S.zip")
+    date = datetime.strptime(name, "%Y-%m-%d_%H-%M-%S")
     day = date.strftime("%Y-%m-%d")
     hour = date.strftime("%H:%M:%S")
     timestamp = date.timestamp()
@@ -15,7 +15,7 @@ def parseFullBackup(rel_path: pathlib.Path):
 
 
 def parseDifferentialBackup(rel_path: pathlib.Path):
-    "Name is in format backup_%Y-%m-%d_%H-%M-%S-{type}.zip, where type can be full or partial"
+    "Name is in format backup_%Y-%m-%d_%H-%M-%S-{type}, where type can be full or partial"
     name = rel_path.stem
     if "full" in name:
         t_ = "full"
@@ -25,7 +25,7 @@ def parseDifferentialBackup(rel_path: pathlib.Path):
         name = name.replace("-partial", "")
     else:
         t_ = "unknown"
-    dt = datetime.strptime(name, "backup_%Y-%m-%d_%H-%M-%S.zip")
+    dt = datetime.strptime(name, "backup_%Y-%m-%d_%H-%M-%S")
     day = dt.strftime("%Y-%m-%d")
     hour = dt.strftime("%H:%M:%S")
     timestamp = dt.timestamp()
