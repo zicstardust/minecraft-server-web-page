@@ -1,5 +1,4 @@
 import os
-import pathlib
 
 from dotenv import load_dotenv
 
@@ -8,7 +7,6 @@ load_dotenv()
 from flask import Flask, render_template
 from lib.server_status import get_server_status
 
-# Configure for port 80
 app = Flask(__name__)
 
 
@@ -24,5 +22,4 @@ def index():
 
 
 if __name__ == "__main__":
-    # app.run(host="0.0.0.0", port=5000)
     app.run()
