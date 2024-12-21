@@ -1,4 +1,4 @@
-FROM python:3.13
+FROM python:3.13-slim
 
 ENV SERVER_NAME='Server name'
 ENV SERVER_URI_JAVA="127.0.0.1:25565"
