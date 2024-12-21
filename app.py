@@ -22,6 +22,9 @@ def index():
                            discord_link=(os.environ["DISCORD_LINK"])
                            )
 
+def production():
+    return app
+
 
 if __name__ == "__main__":
     app.run()
