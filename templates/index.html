@@ -7,7 +7,7 @@
 {% block title %}Welcome to the minecraft server!{% endblock %}
 
 {% block content %}
-<p id="linkJava" onclick="copyElementText('linkJava')">Java: {{ server_uri_java }}</p>
+<p id="linkJava" onclick="copyLink('{{ server_uri_java }}')">Java: {{ server_uri_java }}</p>
 <div class="information">
     {% for stat in server_status %}
     <div class="card">
@@ -25,8 +25,7 @@
 
 {% block script %}
 <script>
-        function copyElementText(id) {
-        var text = "{{ server_uri_java }}";
+    function copyLink(text) {
         var elem = document.createElement("textarea");
         document.body.appendChild(elem);
         elem.value = text;
