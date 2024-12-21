@@ -17,6 +17,7 @@ def index():
                            server_status=server_status,
                            server_name=(os.environ["SERVER_NAME"]),
                            server_uri_java=(os.environ["SERVER_URI_JAVA"]),
+                           server_uri_bedrock=(os.environ["SERVER_URI_BEDROCK"]),
                            server_map_url=(os.environ["SERVER_MAP_URL"]),
                            discord_link=(os.environ["DISCORD_LINK"])
                            )
