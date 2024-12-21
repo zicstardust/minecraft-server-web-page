@@ -1,12 +1,5 @@
-@font-face {
-    font-family: 'Archivo';
-    src: url('../fonts/Archivo_Expanded-ExtraBold.woff') format('woff');
-    font-weight: normal;
-    font-style: normal;
-}
-
 * {
-    font-family: 'Archivo', sans-serif;
+    font-family: 'Minecraft', sans-serif;
     color: white;
     box-sizing: border-box;
 }
