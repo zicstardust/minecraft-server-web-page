@@ -16,7 +16,7 @@ def index():
     return render_template("index.html",
                            server_status=server_status,
                            server_name=(os.environ["SERVER_NAME"]),
-                           server_uri=(os.environ["SERVER_URI"]),
+                           server_uri_java=(os.environ["SERVER_URI_JAVA"]),
                            server_map_url=(os.environ["SERVER_MAP_URL"]),
                            discord_link=(os.environ["DISCORD_LINK"])
                            )

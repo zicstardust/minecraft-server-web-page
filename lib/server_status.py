@@ -1,7 +1,7 @@
 import os
 from mcstatus import JavaServer
 
-server = JavaServer.lookup((os.environ["SERVER_URI"]))
+server = JavaServer.lookup((os.environ["SERVER_URI_JAVA"]))
 
 stats_list = [
     {
