@@ -1,10 +1,6 @@
 import os
-
-from dotenv import load_dotenv
-
-load_dotenv()
-
 from flask import Flask, render_template
+from waitress import serve
 from lib.server_status import get_server_status
 
 app = Flask(__name__)
@@ -22,9 +18,5 @@ def index():
                            discord_link=(os.environ["DISCORD_LINK"])
                            )
 
-def production():
-    return app
-
-
 if __name__ == "__main__":
-    app.run()
+    serve(app, host='0.0.0.0', port=8080)
