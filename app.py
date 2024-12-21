@@ -3,7 +3,7 @@ import pathlib
 
 from dotenv import load_dotenv
 
-load_dotenv(os.path.join(os.path.dirname(__file__), "minecraft-web.env"))
+load_dotenv()
 
 from flask import Flask, render_template, send_from_directory
 from lib.backups import get_backup_folder_file, get_backups
