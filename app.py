@@ -17,7 +17,7 @@ app = Flask(__name__)
 @app.route("/")
 def index():
     server_status = get_server_status()
-    return render_template("index.html", server_status=server_status)
+    return render_template("index.html", server_status=server_status, server_uri=(os.environ["SERVER_URI"]))
 
 
 @app.route("/backups")
