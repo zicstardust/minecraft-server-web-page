@@ -1,6 +1,7 @@
 *.pyc
-/__pycache__/
-
+__pycache__
+.dockerignore
+.git
 .venv
 .env
 .env-exemple
@@ -8,3 +9,4 @@
 README.md
 docker-compose.yml
 Dockerfile
+requirements-dev.txt
