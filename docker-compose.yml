@@ -8,5 +8,7 @@ services:
       - SERVER_URI_BEDROCK = "127.0.0.1:19132"
       - SERVER_MAP_URL = "http://127.0.0.1:9980"
       - DISCORD_LINK = "https://discord.gg/blabla"
+    #volumes:
+    #  - <PATH PNG IMAGE>:/app/static/img/background_image.png
     ports:
       - "8080:8080"
