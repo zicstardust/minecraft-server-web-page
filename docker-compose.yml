@@ -1,6 +1,6 @@
 services:
-  web:
-    container_name: minecraft-server-web-page
+  mcserver-web-page:
+    container_name: mcserver-web-page
     build: .
     environment:
       - SERVER_NAME = "Server name"
