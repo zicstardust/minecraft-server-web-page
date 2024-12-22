@@ -30,7 +30,7 @@ a {
 }
 
 .background {
-    background-image: url("../img/background_image.png");
+    background-image: url("../img/background_image");
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
