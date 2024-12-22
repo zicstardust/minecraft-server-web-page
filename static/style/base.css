@@ -57,7 +57,7 @@ a {
 .content {
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: top;
     overflow-y: auto;
     overflow-x: hidden;
     height: 100%;

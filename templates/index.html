@@ -4,11 +4,11 @@
 <link rel="stylesheet" href="{{ url_for('static', filename='style/index.css') }}">
 {% endblock %}
 
-{% block title %}Welcome to the minecraft server!{% endblock %}
+{% block title %}Página Inicial{% endblock %}
 
 {% block content %}
-<p onclick="copyLink('{{ server_uri_java }}')">Java: {{ server_uri_java }}</p>
-<p onclick="copyLink('{{ server_uri_bedrock }}')">Bedrock: {{ server_uri_bedrock }}</p>
+<h2 onclick="copyLink('{{ server_uri_java }}')">Java: {{ server_uri_java }}</h2>
+<h2 onclick="copyLink('{{ server_uri_bedrock }}')">Bedrock: {{ server_uri_bedrock }}</h2>
 <div class="information">
     {% for stat in server_status %}
     <div class="card">
