@@ -2,7 +2,6 @@ services:
   web:
     container_name: minecraft-server-web-page
     build: .
-    command: "python app.py"
     environment:
       - SERVER_NAME = "Server name"
       - SERVER_URI_JAVA = "127.0.0.1:25565"

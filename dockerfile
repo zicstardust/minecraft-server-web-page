@@ -15,4 +15,4 @@ COPY . .
 
 EXPOSE 8080
 
-CMD [ "python", "app.py" ]
+CMD [ "waitress-serve", "--port=8080", "--call", "app:production" ]
