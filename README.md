@@ -4,8 +4,8 @@ Simple web page to display the status of the minecraft server
 ## Run Docker Compose
 ```
 services:
-  minecraft-server-web-page:
-    image: zicstardust/minecraft-server-web-page:latest
+  mcserver-web-page:
+    image: zicstardust/mcserver-web-page:latest
     restart: unless-stopped
     environment:
       SERVER_NAME: "Server name"
@@ -16,5 +16,5 @@ services:
     #volumes:
     #  - <PATH PNG IMAGE>:/app/static/img/background_image.png #Opcional
     ports:
-      - "127.0.0.1:8090:8080"
+      - "8080:8080"
 ```
