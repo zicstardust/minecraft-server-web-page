@@ -8,11 +8,9 @@ ENV DISCORD_LINK="https://discord.gg/exemple"
 
 WORKDIR /app
 
-COPY requirements.txt .
-
-RUN pip3 install --no-cache-dir -r requirements.txt
-
 COPY . .
+
+RUN pip3 install --no-cache-dir -r requirements-prod.txt
 
 EXPOSE 8080
 
