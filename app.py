@@ -1,7 +1,9 @@
 import os
 from flask import Flask, render_template
+from lib.background_image import define_background_image
 from lib.server_status import get_server_status
 
+define_background_image()
 
 app = Flask(__name__)
 

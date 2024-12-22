@@ -5,6 +5,7 @@ ENV SERVER_URI_JAVA="play.exemple.com"
 ENV SERVER_URI_BEDROCK="bedrock.exemple.com:3897"
 ENV SERVER_MAP_URL="https://dynmap.exemple.com"
 ENV DISCORD_LINK="https://discord.gg/exemple"
+ENV BACKGROUND_IMAGE_URL="None"
 
 WORKDIR /app
 

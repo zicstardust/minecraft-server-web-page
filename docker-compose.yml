@@ -8,7 +8,8 @@ services:
       SERVER_URI_BEDROCK: "bedrock.exemple.com:3897"
       SERVER_MAP_URL: "https://dynmap.exemple.com"
       DISCORD_LINK: "https://discord.gg/exemple"
+      # BACKGROUND_IMAGE_URL: "https://exemple.com/image" #Opcional
     #volumes:
-    #  - <PATH PNG IMAGE>:/app/static/img/background_image.png #Opcional
+    #  - <IMAGE PATH>:/app/static/img/import/background_imported #Opcional
     ports:
       - "8080:8080"
