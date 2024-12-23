@@ -25,9 +25,6 @@ def download_image():
 def define_background_image():
     if exists("static/img/background_image_use"):
         remove("static/img/background_image_use")
-    if exists("static/img/import/background_imported"):
-        copy('static/img/import/background_imported', "static/img/background_image_use")
-        return
     if image_url != 'None':
         download_image()
         if exists(image_path_temp) and file_is_image(image_path_temp):

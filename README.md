@@ -14,8 +14,6 @@ services:
       SERVER_MAP_URL: "https://dynmap.exemple.com"
       DISCORD_LINK: "https://discord.gg/exemple"
       # BACKGROUND_IMAGE_URL: "https://exemple.com/image" #Opcional
-    #volumes:
-    #  - <IMAGE PATH>:/app/static/img/import/background_imported #Opcional
     ports:
       - "8080:8080"
 ```
