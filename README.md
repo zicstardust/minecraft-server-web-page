@@ -10,7 +10,7 @@ services:
     environment:
       SERVER_NAME: "Server name"
       SERVER_URI_JAVA: "play.exemple.com"
-      SERVER_URI_BEDROCK: "bedrock.exemple.com:3897"
+      SERVER_URI_BEDROCK: "bedrock.exemple.com:19132"
       SERVER_MAP_URL: "https://dynmap.exemple.com"
       DISCORD_LINK: "https://discord.gg/exemple"
       # BACKGROUND_IMAGE_URL: "https://exemple.com/image" #Opcional

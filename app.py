@@ -1,4 +1,4 @@
-import os
+from os import environ
 from flask import Flask, render_template
 from lib.background_image import define_background_image
 from lib.server_status import get_server_status
@@ -13,11 +13,11 @@ def index():
     server_status = get_server_status()
     return render_template("index.html",
                            server_status=server_status,
-                           server_name=(os.environ["SERVER_NAME"]),
-                           server_uri_java=(os.environ["SERVER_URI_JAVA"]),
-                           server_uri_bedrock=(os.environ["SERVER_URI_BEDROCK"]),
-                           server_map_url=(os.environ["SERVER_MAP_URL"]),
-                           discord_link=(os.environ["DISCORD_LINK"])
+                           server_name=environ.get("SERVER_NAME","Server Name"),
+                           server_uri_java=environ.get("SERVER_URI_JAVA","localhost"),
+                           server_uri_bedrock=environ.get("SERVER_URI_BEDROCK","localhost:19132"),
+                           server_map_url=environ.get("SERVER_MAP_URL","https://dynmap.exemple.com"),
+                           discord_link=environ.get("DISCORD_LINK","https://discord.gg/exemple")
                            )
 
 def production():

@@ -4,7 +4,7 @@ from shutil import copy
 import requests
 import filetype
 image_path_temp='static/img/background_image_temp'
-image_url=environ["BACKGROUND_IMAGE_URL"]
+image_url=environ.get("BACKGROUND_IMAGE_URL", 'None')
 
 def file_is_image(file) -> bool:
     kind = filetype.guess(file).mime
