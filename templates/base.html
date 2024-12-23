@@ -15,10 +15,14 @@
             <div class="nav-section left">
                 <a href="{{ url_for('index') }}">{{ server_name }}</a>
                 <div class="v-separator"></div>
-                <a href="{{ server_map_url }}" target="_blank" rel="noopener noreferrer">Mapa</a>
+                {% if server_map_url != "": %}
+                <a href="{{ server_map_url }}" target="_blank" rel="noopener noreferrer">Map</a>
+                {% endif %}
             </div>
             <div class="nav-section right">
-                <a href="{{ discord_link }}">Entre no Discord</a>
+                {% if discord_link != "": %}
+                <a href="{{ discord_link }}">Discord</a>
+                {% endif %}
             </div>
         </nav>
         <div class="h-separator"></div>

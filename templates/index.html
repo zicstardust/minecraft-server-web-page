@@ -4,11 +4,13 @@
 <link rel="stylesheet" href="{{ url_for('static', filename='style/index.css') }}">
 {% endblock %}
 
-{% block title %}Página Inicial{% endblock %}
+{% block title %}Home Page{% endblock %}
 
 {% block content %}
 <h2 onclick="copyLink('{{ server_uri_java }}')">Java: {{ server_uri_java }}</h2>
+{% if server_uri_bedrock != "": %}
 <h2 onclick="copyLink('{{ server_uri_bedrock }}')">Bedrock: {{ server_uri_bedrock }}</h2>
+{% endif %}
 <div class="information">
     {% for stat in server_status %}
     <div class="card">
